@@ -1,0 +1,228 @@
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 84px;
+    min-height: 84px;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+
+    &__img {
+        min-width: 50px;
+        min-height: 50px;
+        width: 50px;
+        height: 50px;
+    }
+
+    &-clock {
+        background-color: var(--clr-icon-clock);
+        --clock-color: #fff;
+    }
+
+    &-smile {
+        position: relative;
+        background-color: var(--clr-icon-smile);
+        --smile-color: #fff;
+
+        .icon__img {
+            fill: var(--smile-color);
+        }
+    }
+
+    &-runner {
+        border-radius: 50%;
+        background-color: var(--clr-icon-runner);
+        overflow: hidden;
+        --runner-body-color: hsl(246deg, 63%, 97%);
+        --runner-head-color: #fff;
+    }
+
+    &-arrows {
+        position: relative;
+        background-color: var(--clr-icon-arrows);
+        overflow: hidden;
+        transform: rotate(38deg);
+        --arrows-color: hsl(246deg, 63%, 97%);
+    }
+}
+
+.clock {
+    position: relative;
+    min-width: 50px;
+    min-height: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--clock-color);
+
+    &__arrow {
+        position: absolute;
+        display: block;
+        height: 3px;
+        background-color: var(--clock-color);
+        left: calc(50% - 1.5px);
+        top: calc(50% - 1.5px);
+        border-radius: 3px;
+        transform-origin: 1.5px center;
+        animation-timing-function: linear;
+        animation-name: rotate-arrow;
+        animation-iteration-count: infinite;
+
+        &-hour {
+            width: 14px;
+            transform: rotate(-90deg);
+            animation-duration: 36s;
+        }
+
+        &-minutes {
+            width: 18px;
+            transform: rotate(-90deg);
+            animation-duration: 12s;
+        }
+    }
+}
+
+.smile-eye {
+    &__line {
+        position: absolute;
+        display: block;
+        height: 7.25px;
+        width: 3px;
+        background-color: var(--smile-color);
+        right: 26px;
+        border-radius: 3px;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 2s;
+
+        &:first-child {
+            top: 24.8px;
+            transform-origin: right bottom;
+        }
+
+        &:last-child {
+            top: 29.8px;
+            transform-origin: right top;
+        }
+    }
+}
+
+.icon-arrow {
+    position: absolute;
+    width: 38px;
+    height: 30px;
+    left: 22px;
+    top: 18px;
+
+    &:last-child {
+        top: 33.2px;
+        left: 33.8px;
+    }
+
+    &__line,
+    .tip__line {
+        position: absolute;
+        display: block;
+        width: 3px;
+        background-color: var(--arrows-color);
+    }
+    
+    &__line {
+        &:first-child {
+            height: 24px;
+            border-radius: 0 0 3px 3px;
+            top: 15.1px;
+            right: 27.6px;
+            transform: rotate(4.2deg);
+
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        &:nth-child(2) {
+            height: 11.5px;
+            right: 22px;
+            top: 11px;
+            transform: rotate(90deg);
+
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+
+    &__tip {
+        position: absolute;
+        width: 12.5px;
+        left: 13px;
+        top: -3px;
+        bottom: 11.8px;
+
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease, linear;
+    }
+
+    .tip__line {
+
+        &:first-child {
+            height: 100%;
+            right: 4.75px;
+        }
+
+        &:nth-child(2) {
+            border-radius: 0 0 3px 3px;
+            height: 10px;
+            transform: rotate(45deg);
+            top: -3.6px;
+            left: 2.1px;
+        }
+
+        &:last-child {
+            border-radius: 0 0 3px 3px;
+            height: 9px;
+            transform: rotate(-47deg);
+            top: -3.4px;
+            right: 2.4px;
+        }
+    }
+}
+
+//Анимируем иконки, только когда они видны
+._anim-items._show {
+    //smile
+    .smile-eye {
+        &__line {
+            &:first-child {
+                animation-name: wink-first-line;
+            }
+
+            &:last-child {
+                animation-name: wink-second-line;
+            }
+        }
+    }
+
+    //arrows
+    .icon-arrow {
+        &__line {
+            &:first-child {
+                animation-name: first-arrow-line-degrowth, arrow-show;
+            }
+
+            &:nth-child(2) {
+                animation-name: second-arrow-line-degrowth, arrow-show;
+            }
+        }
+
+        &__tip {
+            animation-name: arrow-tip-grow, arrow-tip-degrowth;
+        }
+
+        .tip__line {
+            animation: arrow-show 6s infinite linear;
+        }
+    }
+}

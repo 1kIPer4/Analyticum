@@ -1,0 +1,159 @@
+@keyframes btn-loading {
+    30% {
+        transform: scale(1.5);
+    }
+
+    35% {
+        transform: scale(1.5);
+    }
+
+    65% {
+        transform: scale(1);
+    }
+}
+
+//Глаза кота
+@keyframes eye-half-open {
+    7% {
+        height: 36px;
+    }
+    14% {
+        height: 36px;
+    }
+    21% {
+        height: 50px;
+    }
+}
+
+@keyframes eye-close {
+    7% {
+        opacity: 0;
+    }
+    14% {
+        opacity: 0;
+    }
+    21% {
+        opacity: 1;
+    }
+}
+
+//Clock
+@keyframes rotate-arrow {
+    from {
+        transform: rotate(-90deg);
+    }
+    to {
+        transform: rotate(270deg);
+    }
+}
+
+//Smile
+@keyframes wink-first-line {
+    12% {
+        transform: rotate(65deg);
+        height: 11.5px;
+        top: 22.2px;
+        right: 32px;
+    }
+    17% {
+        transform: rotate(65deg);
+        height: 11.5px;
+        top: 22.2px;
+        right: 32px;
+    }
+    36% {
+        transform: rotate(0deg);
+        height: 7.25px;
+        top: 24.8px;
+        right: 26px;
+    }
+}
+
+@keyframes wink-second-line {
+    12% {
+        transform: rotate(-65deg);
+        height: 11.5px;
+        right: 32px;
+    }
+    17% {
+        transform: rotate(-65deg);
+        height: 11.5px;
+        right: 32px;
+    }
+    36% {
+        transform: rotate(0deg);
+        height: 7.25px;
+        right: 26px;
+    }
+}
+
+//Arrows
+
+//arrow-tip
+@keyframes arrow-tip-grow {
+    35% {
+        top: -3px;
+    }
+    50% {
+        top: -50px;
+    }
+    100% {
+        top: -50px;
+    }
+}
+
+@keyframes arrow-tip-degrowth {
+    70% {
+        bottom: 11.8px;     
+    }
+    85% {
+        bottom: 70px;
+    }
+    100% {
+        bottom: 70px;
+    }
+}
+
+//arrow lines
+@keyframes first-arrow-line-degrowth {
+    50% {
+        height: 24px;
+        transform: rotate(4.2deg) translateX(0);
+    }
+    60% {
+        height: 0;
+        transform: rotate(4.2deg) translateX(1.2px);
+    }
+    100% {
+        height: 0;
+        transform: rotate(4.2deg) translateX(1.2px);
+    }
+}
+
+@keyframes second-arrow-line-degrowth {
+    60% {
+        height: 11.5px;
+        transform: rotate(90deg) translate(0);
+    }
+    70% {
+        height: 0;
+        transform: rotate(90deg) translate(5.5px, -5.8px);
+    }
+    100% {
+        height: 0;
+        transform: rotate(90deg) translate(5.5px, -5.8px);
+    }
+}
+
+//скрытие и появление иконки
+@keyframes arrow-show {
+    0% {
+        background-color: var(--clr-icon-arrows);
+    }
+    15% {
+        background-color: var(--arrows-color);
+    }
+    100% {
+        background-color: var(--arrows-color);
+    }
+}

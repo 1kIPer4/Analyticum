@@ -1,0 +1,188 @@
+.form {
+    color: var(--clr-primary-500);
+
+    &__field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+    }
+
+    &__textarea {
+        height: 56px;
+        resize: vertical;
+    }
+
+    &__input,
+    &__textarea {
+        position: relative;
+        width: 100%;
+        color: var(--clr-primary-500);
+        background-color: transparent;
+        border: 1px solid var(--clr-primary-500);
+        padding: 18px 20px;
+        border-radius: 3px;
+        transition: all .3s ease;
+
+        &::placeholder {
+            color: var(--clr-primary-500);
+        }
+
+        &:enabled:hover,
+        &:enabled:active,
+        &:enabled:focus {
+            color: var(--clr-primary-100);
+            background-color: var(--clr-primary-500);
+
+            &::placeholder {
+                color: var(--clr-primary-100);
+            }
+        }
+
+        &:enabled:focus {
+            outline: 1px solid var(--clr-button-colored);
+            outline-offset: 6px;
+        }
+
+        &:disabled {
+            color: var(--clr-primary-300);
+            background-color: var(--clr-primary-400);
+            border: 1px solid var(--clr-primary-400);
+            resize: none;
+            cursor: default;
+
+            &::placeholder {
+                color: var(--clr-primary-300);
+            }
+        }
+    }
+
+    .text-error {
+        display: none;
+        font-size: 14px;
+        line-height: normal;
+        margin-top: 5px;
+        color: var(--clr-form-error);
+        white-space: pre-line;
+    }
+
+    &__field.error {
+        .form__input,
+        .form__textarea {
+            border-color: var(--clr-form-error);
+        }
+        
+        .text-error {
+            display: block;
+        }
+    }
+
+    .confirmation {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-size: 14px;
+        line-height: 20px;
+
+        &__content {
+            display: flex;
+        }
+
+        &__checkbox {
+            margin-right: 12px;
+            margin-top: 3px;
+        }
+
+        &__text {
+            white-space: pre-line;
+        }
+
+        &__link {
+            color: var(--clr-form-link);
+            text-decoration: underline;
+            transform: color .3s ease;
+            
+            &:focus {
+                outline: 1px solid var(--clr-button-colored);
+                outline-offset: 3px;
+            }
+
+            &::before {
+                display: none;
+            }
+
+            &:disabled {
+                color: var(--clr-primary-300);
+                cursor: default;
+            }
+        }
+
+        &.error {
+            .checkbox__label {
+                border: 2px solid var(--clr-form-error);
+            }
+            
+            .text-error {
+                display: block;
+            }
+        }
+    }
+}
+
+.checkbox {
+    &__label {
+        position: relative;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: hsl(251deg, 52%, 94%);
+        border-radius: 3px;
+        border: 1px solid hsla(0, 0%, 100%, .46);
+        cursor: pointer;
+        transition: all .2s ease;
+
+        &::before,
+        &::after {
+            content: "";
+            display: none;
+            position: absolute;
+            height: 3px;
+            background-color: var(--clr-primary-100);
+        }
+
+        &::before {
+            top: 11.7px;
+            left: 5.3px;
+            width: 7px;
+            transform: rotate(40deg);
+        }
+
+        &::after {
+            top: 10px;
+            left: 7.5px;
+            width: 11px;
+            transform: rotate(130deg);
+        }
+    }
+
+    &__input {
+        &:checked ~ .checkbox__label::before,
+        &:checked ~ .checkbox__label::after {
+            display: flex;
+        }
+
+        &:disabled ~ .checkbox__label {
+            border: 1px solid var(--clr-primary-400);
+            background-color: var(--clr-primary-400);
+            cursor: default;
+        }
+
+        &:enabled ~ .checkbox__label:focus {
+            outline: 1px solid var(--clr-button-colored);
+            outline-offset: 4px;
+        }
+    }
+}

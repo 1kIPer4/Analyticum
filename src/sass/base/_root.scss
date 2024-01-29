@@ -1,0 +1,136 @@
+@use '../abstracts';
+
+//Шрифты
+@each $font, $weight in abstracts.$fonts {
+    @include abstracts.font-face($font, $weight);
+}
+
+//Цвета
+:root {
+    @each $color, $shade in abstracts.$colors {
+        @each $prop, $value in $shade {
+            --clr-#{$color}-#{$prop}: #{$value};
+        }
+    }
+
+    --transition-media: all .5s ease;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background-color: var(--clr-primary-500);
+    color: var(--clr-primary-100);
+    font-size: 16px;
+    line-height: 120%;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+}
+
+a {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        opacity: 0;
+        border-radius: 3px;
+        border: 1px solid var(--clr-button-colored);
+    }
+
+    &:focus {
+        outline: none;
+
+        &::before {
+            visibility: visible;
+            opacity: 1;
+            top: -6px;
+            left: -6px;
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 120%;
+}
+
+h1, h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h3, h4 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+//---------------------- Адаптив [744 - 1600] ----------------------
+@media screen and (max-width: 1600px) {
+    h1 {
+        font-size: 60px;
+    }
+    
+    h2 {
+        font-size: 40px;
+    }
+    
+    h3 {
+        font-size: 30px;
+    }
+    
+    h4 {
+        font-size: 18px;
+    }
+
+    h5, h6 {
+        line-height: 130%;
+    }
+}
+
+//---------------------- Адаптив [428 - 743] ----------------------
+@media screen and (max-width: 743px) {
+    h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+    
+    h3 {
+        font-size: 24px;
+    }
+}

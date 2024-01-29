@@ -1,0 +1,35 @@
+.container {
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: 120px 0;
+}
+
+//---------------------- Адаптив [1700 - 1920] ----------------------
+@media screen and (max-width: 1920px) {
+    .container {
+        margin: 0 200px;
+    }
+}
+
+//---------------------- Адаптив [1180 - 1600] ----------------------
+@media screen and (max-width: 1600px) {
+    .container {
+        margin: 0 auto;
+        max-width: 1100px;
+    }
+}
+
+//---------------------- Адаптив [744 - 1179] ----------------------
+@media screen and (max-width: 1179px) {
+    .container {
+        max-width: 744px;
+        padding: 80px 40px;
+    }
+}
+
+//---------------------- Адаптив [428 - 743] ----------------------
+@media screen and (max-width: 743px) {
+    .container {
+        padding: 80px 24px;
+    }
+}

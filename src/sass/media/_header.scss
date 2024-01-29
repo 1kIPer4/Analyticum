@@ -1,0 +1,125 @@
+//---------------------- Адаптив [1180 - 1600] ----------------------
+@media screen and (max-width: 1600px) {
+    .header {
+        padding: 20px 0;
+    }
+}
+
+//---------------------- Адаптив [744 - 1179] ----------------------
+@media screen and (max-width: 1179px) {
+    .header {
+        .container {
+            padding: 0 40px;
+            justify-content: space-between;
+        }
+        
+        padding: 18px 0;
+
+        .logo {
+            height: 24px;
+            
+            &__img {
+                min-width: 155px;
+                min-height: 24px;
+                width: 155px;
+                height: 24px;
+            }
+        }
+
+        .btn-burger {
+            display: flex;
+        }
+
+        &__menu {
+            display: flex;
+            justify-content: flex-end;
+            width: auto;
+
+            &.open {
+                .menu__wrapper {
+                    opacity: 1;
+                    visibility: visible;
+                    right: 0;
+                }
+               
+                .btn-burger {
+                    .btn-burger__line:first-child {
+                        transform: translateY(11px) rotate(45deg);
+                    }
+    
+                    .btn-burger__line:nth-child(2) {
+                        opacity: 0;
+                    }
+    
+                    .btn-burger__line:last-child {
+                        transform: translateY(-11px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        .menu {
+            width: 100%;
+            
+            &__wrapper {
+                position: absolute;
+                visibility: hidden;
+                overflow-y: auto;
+                opacity: 0;
+                top: 60px;
+                right: -428px;
+                flex-direction: column;
+                max-width: 428px;
+                height: 100%;
+                min-height: calc(100dvh - 60px);
+                padding: 0 24px 60px 24px;
+                background-color: var(--clr-primary-500);
+                border-bottom: 1px solid var(--clr-primary-400);
+                border-top: 1px solid var(--clr-primary-400);
+                transition: all .4s ease;
+            }
+
+            &__list {
+                flex-direction: column;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            &__item {
+                padding: 40px 0;
+                border-bottom: 1px solid var(--clr-primary-400);
+            }
+
+            &__link {
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+
+        &__info {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .btn-consultation {
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        .socials {
+            display: flex;
+            margin-bottom: 40px;
+        }
+
+        &__contacts {
+            align-self: auto;
+            align-items: center;
+            margin-right: 0;
+
+            .phone {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

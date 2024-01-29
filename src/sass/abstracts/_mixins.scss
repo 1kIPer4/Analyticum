@@ -1,0 +1,43 @@
+// String Replace
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Font Face
+@mixin font-face($name, $weight: normal, $style: normal, $path: '../assets/fonts/', $exts: eot woff2 woff ttf) {
+  $src: local(quote(str-replace($name, '-', ' '))), local(quote($name));
+
+  $extmods: (
+          eot: "?#iefix",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+
+  @if ($style == normal and str-index($name, italic)) {
+    $style: italic;
+  }
+
+  @each $ext in $exts {
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $src: append($src, url(quote($path + $name + "." + $ext)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote(str-slice($name, 1, str-index($name, "-") - 1));
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: $src;
+  }
+}

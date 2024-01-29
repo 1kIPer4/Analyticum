@@ -1,0 +1,59 @@
+//---------------------- Адаптив [744 - 1179] ----------------------
+@media screen and (max-width: 1179px) {
+    .footer {
+        .menu {
+            &__list {
+               justify-content: space-around;
+            }
+        }
+
+        &__collumn {
+            min-width: auto;
+
+            &:nth-child(1n) {
+                transition-delay: 0s;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &__contacts {
+            flex-direction: column;
+        }
+    }
+}
+
+//---------------------- Адаптив [428 - 767] ----------------------
+@media screen and (max-width: 767px) {
+    .footer {
+        .container {
+            padding: 60px 40px;
+        }
+
+        .menu {
+            &__list {
+               justify-content: space-around;
+               flex-direction: column;
+            }
+
+            &__item {
+                margin-left: 0;
+                margin-right: 0;
+                
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        &__collumn {
+            transform: translateY(30%);
+        }
+
+        &__contatcs {
+            margin-right: 60px;
+        }
+    }
+}

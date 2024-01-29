@@ -1,0 +1,98 @@
+.theme {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    top: 50svh;
+    height: 220px;
+    width: 130px;
+    padding: 15px 10px;
+    border-radius: 0 20px 20px 0;
+    background-color: var(--clr-primary-200);
+    transform: translate(-75%, -50%);
+    z-index: 100;
+
+    &._show {
+        transform: translate(-60%, -50%);
+        transition-duration: 1s, .5s;
+    }
+
+    &._open {
+        transform: translate(0, -50%);
+    }
+    
+    &__tools {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 50px;
+    }
+
+    &__range {
+        display: block;
+        min-width: 130px;
+        width: 130px;
+        margin-left: -38px;
+        transform: rotate(-90deg) translateX(-50%);
+    }
+
+    &__color {
+        display: block;
+        min-width: 50px;
+        min-height: 27px;
+    }
+
+    &__title {
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        writing-mode: vertical-lr;
+        transform: scale(-1, -1);
+        cursor: pointer;
+    }
+}
+
+//---------------------- Адаптив [428 - 767] ----------------------
+@media screen and (max-width: 767px) {
+    .theme {
+        width: 220px;
+        height: 130px;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        border-radius: 20px 20px 0 0;
+        padding: 12px 10px;
+        transform: translate(-50%, 75%);
+        flex-direction: column-reverse;
+
+        &._show {
+            transform: translate(-50%, 70%);
+        }
+
+        &._open {
+            transform: translate(-50%, 0);
+        }
+
+        &__tools {
+            width: 100%;;
+            flex-direction: column-reverse;
+            justify-content: space-around;
+        }
+
+        &__range {
+            transform: rotate(0) translateX(55%);
+        }
+
+        &__color {
+            margin: 0 auto;
+            margin-top: 6px;
+        }
+
+        &__title {
+            writing-mode: horizontal-tb;
+            transform: scale(1, 1);
+        }
+    }
+}

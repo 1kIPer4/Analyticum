@@ -1,0 +1,23 @@
+$colors: (
+  primary: (
+    500: hsl(258deg, 36%, 95%),
+    400: hsl(269deg, 25%, 82%),
+    300: hsl(261deg, 23%, 41%),
+    200: hsl(261deg, 31%, 31%),
+    100: hsl(261deg, 60%, 16%),
+  ),
+  button: (
+    colored: hsl(295deg, 53%, 54%),
+    light: hsla(263deg, 66%, 65%, .42)
+  ),
+  form: (
+    error: hsl(0, 100%, 74%),
+    link: hsl(313deg, 66%, 65%)
+  ),
+  icon: (
+    clock: hsl(313deg, 66%, 65%),
+    smile: hsl(263deg, 67%, 68%),
+    runner: hsl(40deg, 84%, 57%),
+    arrows: hsl(196deg, 58%, 54%),
+  )
+);

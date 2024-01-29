@@ -1,0 +1,582 @@
+//---------------------- Адаптив [1601 - 1699] ----------------------
+@media screen and (max-width: 1699px) {
+    .welcome {
+        .illustration {
+            transform: scale(.9);
+            right: -60px;
+        }
+    }
+}
+
+//---------------------- Адаптив [1180 - 1600] ----------------------
+@media screen and (max-width: 1600px) {
+    .welcome {
+        height: 700px;
+        padding-top: 100px;
+
+        .offer {
+            max-width: 521px;
+            width: 100%;
+
+            &__text {
+                font-size: 18px;
+            }
+        }
+
+        .illustration {
+            transform: scale(.75);
+            bottom: -85px;
+            right: -120px;
+        }
+    }
+
+    .company {
+        &__info,
+        .illustration {
+            max-width: 530px;
+        }
+
+        .illustration {
+            &__text {
+                font-size: 125px;
+
+                &-small {
+                    font-size: 47px;
+                }
+            }
+        }
+    }
+
+    .technologies {
+        .tabs {
+            font-size: 18px;
+        }
+    }
+
+    .questions {
+        .question {
+            &__row {
+                transform: translateY(70%);
+            }
+
+            &__text {
+                max-width: 65%;
+                font-size: 18px;
+            }
+
+            &__answer {
+                max-width: 65%;
+            }
+        }
+    }
+
+    .team {
+        .slider {
+            .swiper-slide {
+                width: 540px;
+                height: 394px;
+            }
+        }
+    }
+
+    .contacts {
+        .map {
+            width: 632px;
+            height: 366px;
+        }
+    }
+
+    .cooperation {
+        .form {
+            &__collumn {
+                max-width: 540px;
+            }
+        }
+    }
+}
+
+//---------------------- Адаптив [744 - 1179] ----------------------
+@media screen and (max-width: 1179px) {
+    .welcome {
+        height: auto;
+        padding-top: 141px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offer {
+            text-align: center;
+            margin-bottom: 40px;
+
+            &__title {
+                transform: translateY(-10%);
+            }
+
+            &__text {
+                transition-duration: 1.5s;
+                transition-delay: .3s;
+                transform: translateY(40%);
+            }
+        }
+
+        .illustration {
+            position: relative;
+            top: 80px;
+            height: 589px;
+            width: 100%;
+            right: 75px;
+            transform: scale(.75) translateX(-2%);
+            margin-right: 0;
+            transition-property: opacity, transform;
+
+            &._show {
+                transform: scale(.7) translate(0);
+            }
+
+            .cat__body {
+                left: 0;
+            }
+        }
+    }
+
+    .company {
+        .container {
+            flex-direction: column;
+        }
+        
+        &__subtitle {
+            margin-top: 60px;
+        }
+
+        &__info {
+            margin-bottom: 80px;
+        }
+
+        &__info,
+        .illustration {
+            max-width: 100%;
+        }
+    }
+
+    .advantages {
+        &__title {
+            margin-bottom: 60px;
+        }
+
+        &__cards {
+            flex-direction: column;
+        }
+
+        .card {
+            width: 100%;
+
+            &:nth-child(1n) {
+                transition-delay: 0s;
+            }
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            &__header {
+                display: flex;
+                align-items: center;
+            }
+
+            &__title {
+                margin-top: 0;
+                margin-left: 40px;
+            }
+        }
+    }
+
+    .technologies {
+        .tabs {
+            &__item {
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+
+                &:hover:not(._active)::before {
+                    width: 0;
+                }
+    
+                &:hover:not(._active)::after {
+                    left: 100%;
+                    transition: left 0s ease .6s;
+                }
+            }    
+        }
+        
+        &__content {
+            flex-direction: column;
+        }
+
+        &__images,
+        &__texts {
+            width: 100%;
+        }
+
+        &__images {
+            .technology {
+                &__img {
+                    height: 100%;
+                }
+            }
+        }
+
+        &__texts {
+            height: auto;
+            margin-top: 40px;
+            transform: translateY(10%);
+
+            .technology {
+                padding: 0;
+            }
+        }
+    }
+
+    .questions {
+        &__title {
+            transform: translateY(30%);
+
+            .title__row {
+                transform: translateY(50%);
+            }
+        }
+
+        .question {
+            &__row {
+                transform: translateY(65%);
+            }
+
+            &__text {
+                max-width: 100%;
+                margin-right: 20px;
+            }
+
+            &__answer {
+                max-width: 100%;
+                margin-right: 80px;
+            }
+        }
+    }
+
+    .team {
+        &__title {
+            max-width: 520px;
+            margin-bottom: 60px;
+
+            br {
+                display: none;
+            }
+        }
+
+        .slider {
+            .swiper-slide {
+                width: 100%;
+                height: 394px;
+            }
+        }
+    }
+
+    .contacts {
+        &__wrapper {
+            margin-top: 40px;
+            flex-direction: column;
+        }
+
+        .map {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 60px;
+
+            &__icon-caption {
+                font-size: 12px;
+            }
+        }
+
+        .addresses {
+            max-width: 340px;
+
+            &__item {
+                margin-top: 40px;
+                transform: translateY(60%);
+
+                &:nth-child(1n) {
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
+
+    .cooperation {
+        &__title {
+            margin-bottom: 60px;
+        }
+
+        .form {
+            &__container {
+                flex-direction: column;
+            }
+
+            &__collumn {
+                max-width: 100%;
+
+                &:nth-child(2)  {
+                    height: 218px;
+                    margin-left: 0;
+
+                    .form__field {
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+            &__field {
+                &:not(:first-child) {
+                    margin-top: 24px;
+                }
+            }
+
+            .confirmation {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+//---------------------- Адаптив [428 - 743] ----------------------
+@media screen and (max-width: 743px) {
+    @keyframes eye-half-open {
+        7% {
+            height: calc(3.5vw);
+        }
+        14% {
+            height: calc(3.5vw);
+        }
+        21% {
+            height: calc(4.6vw);
+        }
+    }
+    
+    .welcome {
+        .offer {
+            &__text { 
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        .illustration {
+            right: auto;
+            top: 0;
+            height: calc(90vw - 48px);
+            transform: scale(1.05);
+
+            &._show {
+                transform: scale(1);
+            }
+
+            .cat__body {
+                width: 105%;
+                height: calc(115vw);
+                bottom: calc(-32vw);
+
+                &-img {
+                    width: 105%;
+                    height: calc(115vw);
+                }
+            }
+
+            .paw-left {
+                width: calc(45vw - 48px);
+                height: auto;
+                left: calc(4.5vw);
+                bottom: calc(12vw);
+            }
+    
+            .paw-right {
+                width: calc(42vw - 48px);
+                height: auto;
+                left: calc(58vw);
+                bottom: calc(20vw);
+            }
+
+            .cat {
+                &__eye {
+                    width: calc(8vw);
+                    height: calc(4.6vw);
+                    
+                    &-left {
+                        bottom: 63%;
+                        left: 33%;
+                    }
+    
+                    &-right {
+                        bottom: 68%;
+                        left: 53%;
+                    }
+                }
+
+                &__eyelid {
+                    width: calc(8vw);
+                    height: calc(4.5vw);
+                    border-width: calc(.6vw);
+                }
+    
+                &__pupil {
+                    width: calc(5.4vw);
+                    height: 100%;
+                    border-width: calc(.6vw);
+                }
+            }            
+        }
+    }
+
+    .company {
+        &__title {
+            transform: translateY(40%);
+        }
+
+        &__subtitle {
+            transform: translateY(80%);
+        }
+
+        &__text {
+            transform: translateY(30%);
+        }
+
+        .illustration {
+
+            &__text {
+                font-size: 88px;
+
+                &-small {
+                    font-size: 33px;
+                    margin-top: 51px;
+                }
+            }
+        }
+    }
+
+    .advantages {
+        .card {
+            &__title {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .technologies {
+        .tabs {
+            &__item {
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        &__images {
+            height: calc(77vw - 48px);
+        }
+
+        .technology {
+            &__img {
+                width: 100%;
+            }
+        }
+    }
+
+    .questions {
+        .question {
+            &__row {
+                transform: translateY(50%);
+            }
+        }
+    }
+
+    .team {
+        &__title {
+            transform: translateY(40%);
+        }
+
+        .slider {
+            .swiper-slide {
+                height: calc(71vw - 48px);
+            }
+        }
+    }
+
+    .contacts {
+        .map {
+            height: calc(59vw - 48px);
+        }
+
+        .addresses {
+            &__item {
+                transform: translateY(50%);
+            }
+        }
+    }
+}
+
+//Адаптив для technologies слайдера (Появление стрелочек навигации)
+@media screen and (max-width: 489px) {
+    .technologies {
+        .tabs {
+            &__navigation {
+                display: flex;
+            }
+        }
+    }
+}
+
+//---------------------- Адаптив [320 - 427] ----------------------
+@media screen and (max-width: 427px) {
+    .welcome {
+        min-height: 100svh;
+
+        .container {
+            min-height: calc(100svh - 141px);
+            justify-content: space-between;
+        }
+
+        .offer {
+            &__title {
+                font-size: 10vw;
+            }
+        }
+
+        .illustration {
+            .cat {
+                &__pupil {
+                    height: 110%;
+                    border-width: calc(.7vw);
+                }
+            }            
+        }
+    }
+
+    .company {
+        .illustration {
+            &__text {
+                font-size: 24vw;
+
+                &-small {
+                    font-size: 7vw;
+                }
+            }
+        }
+    }
+
+    .cooperation {
+        &__title {
+            font-size: 8vw;
+        }
+    }
+}
